@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="img/icon.png" />
+        <title>Ming's Portfolio</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="css/core.css" />
+        <link rel="stylesheet" href="css/particle-bg.css" />
+        <link rel="stylesheet" href="css/homepage.css" />
+        <script src="data/projects.js"></script>
+        <script src="js/particle-bg.js" defer></script>
+        <script src="js/mouse-effect.js" defer></script>
+        <script src="js/nav.js" defer></script>
+        <!-- GSAP framework -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+            defer
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+            defer
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"
+            defer
+        ></script>
+        <script src="js/gsap/homepage.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Particle Background -->
+        <canvas id="partical-bg"></canvas>
+
+        <!-- Nav Bar -->
+        <nav>
+            <a href="#"><img src="img/icon.png" alt="icon" /></a>
+
+            <span id="navMenuIcon" class="material-symbols-outlined">
+                menu
+            </span>
+
+            <div>
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#home">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Projects Popup, we'll be using JS to show the information -->
+        <div id="projectsPopup">
+            <div id="projectHeader">
+                <h3 id="projectName">Project Name Here</h3>
+                <p
+                    id="projectsPopupClose"
+                    class="intractable"
+                    data-type="close"
+                >
+                    X
+                </p>
+            </div>
+
+            <div id="projectInfo"></div>
+        </div>
+
+        <!-- Mouse Effect :D -->
+        <div id="mouseFollow">
+            <span id="mouseFollow-icon" class="material-symbols-outlined"
+                >open_in_new</span
+            >
+        </div>
+
+        <!-- Main -->
+        <main>
+            <section id="home">
+                <div id="homeImg">
+                    <h1>Howdy</h1>
+                    <img src="img/cowhappy.png" alt="Happy Cow" />
+                </div>
+
+                <div id="homeBio">
+                    <div id="name">
+                        <div>M</div>
+                        <div>i</div>
+                        <div>n</div>
+                        <div>g</div>
+                        <div class="space"></div>
+                        <div>L</div>
+                        <div>i</div>
+                    </div>
+                    <p>Front-end Developer</p>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <div id="projectsGrid">
+                    <!-- Projects will be loaded here with JS -->
+                </div>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+
+                <p>
+                    Howdy there! I'm <span>Ming Li</span>, a passionate Bachelor
+                    of Applied Science student majoring in
+                    <span>Software Development</span> at
+                    <span>Green River College</span>. With a solid foundation
+                    and hands-on experience in front-end coding, I'm eager to
+                    leverage my skills in creating impactful websites for both
+                    companies and consumers. Though I consider myself a junior
+                    in the field, I'm always eager to collaborate with talented
+                    individuals, recognizing the invaluable opportunity it
+                    presents for mutual growth and learning.
+                </p>
+
+                <p>
+                    Currently, I'm actively seeking a
+                    <span>summer internship</span> where I can apply my
+                    technical expertise and coding enthusiasm to real-world
+                    projects. If you're interested in collaborating with me for
+                    internships or work opportunities, feel free to refer to my
+                    <a
+                        href="#"
+                        class="intractable"
+                        data-type="link"
+                        target="_blank"
+                        >resume</a
+                    >
+                    for contact information. Thank you for your time, and
+                    perhaps we can grab some pizza together sometime!
+                </p>
+
+                <p class="quote">You Made it Happen - Atesh Tarsa</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Coming Soon...</h2>
+            </section>
+        </main>
+    </body>
+</html>

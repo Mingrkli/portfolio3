@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+}
+
+:root {
+    --highlight: rgb(0, 255, 255);
+}
+
+body {
+    color: rgb(240, 240, 240);
+    background-color: rgb(20, 20, 20);
+}
+
+main {
+    position: relative;
+
+    z-index: 2;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Nav
+============================================================================================= */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    height: 3rem;
+
+    z-index: 998;
+}
+
+nav #navMenuIcon {
+    font-size: 2rem;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+nav div {
+    display: flex;
+    align-items: end;
+}
+
+nav div a {
+    position: relative;
+
+    margin-left: 1rem;
+
+    transition: 500ms ease;
+}
+
+nav div a:before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 2px;
+    width: 0%;
+
+    background-color: var(--highlight);
+
+    transition: 500ms ease;
+}
+
+nav div a:hover {
+    color: var(--highlight);
+}
+
+nav div a:hover:before {
+    width: 100%;
+}
+
+#navMenuIcon {
+    display: none;
+}
+
+@media screen and (max-width: 540px) {
+    nav div {
+        position: absolute;
+        left: 0;
+        top: 3rem;
+
+        flex-direction: column;
+        gap: 1rem;
+
+        width: 100%;
+        height: 100dvh;
+
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: translateX(100%);
+        transition: 300ms ease;
+    }
+
+    nav div.show {
+        transform: translateX(0);
+    }
+
+    nav div a {
+        font-size: 4rem;
+    }
+
+    #navMenuIcon {
+        display: block;
+    }
+}
+
+/* Mouse Effect
+============================================================================================= */
+#mouseFollow {
+    position: fixed;
+    left: 0;
+    top: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 20px;
+    width: 20px;
+
+    background-color: rgb(183, 255, 255);
+    border-radius: 100%;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    z-index: 1000;
+}
+
+/* Shows the mouseFollow when the user is hollowing over the site */
+body:hover > #mouseFollow {
+    opacity: 1;
+}
+
+/* Hides the mouseFollow if hovering over nav */
+body:hover > nav:hover ~ #mouseFollow {
+    opacity: 0;
+}
+
+/* This is the icon inside of the mouseFollow which is from google icons */
+#mouseFollow-icon {
+    color: black;
+    font-size: 0.5rem;
+
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+/* If the data-type of the mouseFollow is not empty, we will show the mouseFollow-icon */
+#mouseFollow:not([data-type=""]) > #mouseFollow-icon {
+    opacity: 1;
+}
+
+@media screen and (max-width: 540px) {
+    #mouseFollow {
+        display: none;
+    }
+}
